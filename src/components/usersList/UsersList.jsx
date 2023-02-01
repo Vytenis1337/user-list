@@ -1,12 +1,14 @@
 import './UsersList.css';
 import { User } from '../user/User';
 import { useUsers } from '../../context/UsersProvider';
+import { Loading } from '../loading/Loading';
 
 export const UsersList = () => {
-  const { currentUsers } = useUsers();
+  const { currentUsers, loading } = useUsers();
   return (
     <div className='users-list'>
-      {currentUsers.map((user) => {
+      {loading && <Loading />}
+      {currentUsers?.map((user) => {
         return <User key={user.id} user={user} />;
       })}
     </div>

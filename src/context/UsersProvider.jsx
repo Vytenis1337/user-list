@@ -17,6 +17,7 @@ export const UsersProvider = ({ children }) => {
       avatar: '',
     },
   ]);
+  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
 
   const [editID, setEditID] = useState(null);
@@ -44,6 +45,7 @@ export const UsersProvider = ({ children }) => {
           const concatArray = arrOne.concat(arrtwo);
 
           setUsers(concatArray);
+          setLoading(false);
         })
       );
   }, []);
@@ -58,16 +60,14 @@ export const UsersProvider = ({ children }) => {
       value={{
         users,
         setUsers,
-
+        loading,
         setCurrentPage,
         currentPage,
         currentUsers,
-
         editID,
         setEditID,
         editData,
         setEditData,
-
         userAdd,
         setUserAdd,
       }}
