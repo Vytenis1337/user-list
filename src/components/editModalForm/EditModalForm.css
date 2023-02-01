@@ -1,0 +1,125 @@
+.edit-user-motion-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.edit-user-modal {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px 10px;
+  background: #eeeeee;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-around;
+}
+
+.edit-modal-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-modal-item {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.edit-modal-title {
+  font-size: 50px;
+  color: #005792;
+}
+.edit-input-field {
+  width: 90%;
+  font-size: 15px;
+  height: 25px;
+  padding: 10px;
+  border: none;
+  border: 2px solid gray;
+  border-radius: 5px;
+}
+
+.edit-label-field {
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.modal-image {
+  object-fit: contain;
+  width: 200px;
+  height: 250px;
+}
+
+.modal-title {
+  color: #6b5b95;
+  font-size: 20px;
+}
+
+.edit-user-button {
+  background-color: #a2c11c;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  padding: 15px;
+  margin: 10px auto;
+  font-weight: 600;
+  font-size: 25px;
+  width: 75%;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.edit-modal-close {
+  width: 120px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000;
+  background: #e46161;
+  cursor: pointer;
+  border: 1px solid;
+  margin: auto;
+  padding: 10px;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+.edit-user-button:hover,
+.edit-modal-close:hover {
+  transform: scale(1.05);
+  background-color: #00bbf0;
+}
+
+@media (max-width: 1170px) {
+  .edit-user-modal {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 10px 5px;
+    background: #eeeeee;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: space-around;
+  }
+}

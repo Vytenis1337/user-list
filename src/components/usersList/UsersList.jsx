@@ -1,12 +1,12 @@
 import './UsersList.css';
 import { User } from '../user/User';
-import { useUsers } from '../UsersProvider';
+import { useUsers } from '../../context/UsersProvider';
 
 export const UsersList = () => {
-  const { currentPosts } = useUsers();
+  const { currentUsers } = useUsers();
   return (
     <div className='users-list'>
-      {currentPosts.map((user) => {
+      {currentUsers.map((user) => {
         return <User key={user.id} user={user} />;
       })}
     </div>

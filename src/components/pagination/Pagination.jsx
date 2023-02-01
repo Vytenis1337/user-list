@@ -1,13 +1,14 @@
 import './Pagination.css';
 
-import { useUsers } from '../UsersProvider';
+import { useUsers } from '../../context/UsersProvider';
 
 export const Pagination = () => {
-  const { totalPosts, postPerPage, setCurrentPage, currentPage, currentPosts } =
-    useUsers();
+  const { setCurrentPage, currentPage, users, currentUsers } = useUsers();
+
+  const totalPosts = users.length;
   let pages = [];
 
-  for (let i = 1; i <= Math.ceil(totalPosts / postPerPage); i++) {
+  for (let i = 1; i <= Math.ceil(totalPosts / 6); i++) {
     pages.push(i);
   }
 
@@ -43,7 +44,7 @@ export const Pagination = () => {
       <button
         className='pagination-arrow'
         onClick={nextPage}
-        disabled={!currentPosts.length}
+        disabled={!currentUsers.length}
       >
         Next
       </button>
