@@ -1,0 +1,40 @@
+.pagination {
+  height: 100px;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-arrow {
+  width: 85px;
+  height: 80px;
+  margin: 0 10px;
+  font-size: 25px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.pagination-button {
+  width: 85px;
+  height: 80px;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  border-right: 1px solid #000;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.pagination-button-active {
+  width: 85px;
+  height: 80px;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 0;
+  border: none;
+  border-right: 1px solid #000;
+  border-radius: 0;
+  cursor: pointer;
+  background-color: yellow;
+}

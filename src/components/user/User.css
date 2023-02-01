@@ -1,0 +1,80 @@
+.user-container {
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  background: #e4f1fe;
+  align-items: center;
+  margin: auto;
+  border: solid;
+}
+
+.user-image {
+  margin-top: 10px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.user-name {
+  font-size: 25px;
+  color: #83580b;
+}
+
+.user-email {
+  margin: 0;
+  font-size: 20px;
+}
+
+.user-remove-button {
+  background-color: #f44336;
+  border: 2px solid #422800;
+  border-radius: 30px;
+  box-shadow: #422800 4px 4px 0 0;
+  color: #422800;
+  cursor: pointer;
+  padding: 10px;
+  margin: 10px;
+  font-weight: 600;
+  font-size: 18px;
+  width: 80px;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.user-edit-button {
+  width: 120px;
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  color: #000;
+  background: #ffd700;
+  cursor: pointer;
+  border: 3px solid;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  padding: 15px;
+  box-shadow: 1px 1px 0px 0px, 2px 2px 0px 0px, 3px 3px 0px 0px, 4px 4px 0px 0px,
+    5px 5px 0px 0px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.user-remove-button:hover,
+.user-edit-button:hover {
+  background-color: #00bbf0;
+  transform: scale(1.05);
+}
+
+@media (max-width: 750px) {
+  .user-container {
+    width: 100%;
+  }
+}
