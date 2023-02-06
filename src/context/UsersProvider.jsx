@@ -30,6 +30,13 @@ export const UsersProvider = ({ children }) => {
     last_name: '',
     avatar: '',
   });
+  const [formData, setFormData] = useState({
+    id: NaN,
+    email: '',
+    first_name: '',
+    last_name: '',
+    avatar: '',
+  });
 
   useEffect(() => {
     axios
@@ -61,6 +68,7 @@ export const UsersProvider = ({ children }) => {
         users,
         setUsers,
         loading,
+
         setCurrentPage,
         currentPage,
         currentUsers,
@@ -70,6 +78,8 @@ export const UsersProvider = ({ children }) => {
         setEditData,
         userAdd,
         setUserAdd,
+        formData,
+        setFormData,
       }}
     >
       {children}

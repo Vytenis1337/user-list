@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { useUsers } from '../../context/UsersProvider';
 import { motionBg } from '../../utilities/framerMotion';
 
-export const AddUserForm = ({ addUserToEnd, closeAddUserMenu }) => {
+export const AddUserForm = ({ addUserToBegining, closeAddUserMenu }) => {
   const { setFormData, formData } = useUsers();
   return (
     <AnimatePresence>
@@ -55,7 +55,7 @@ export const AddUserForm = ({ addUserToEnd, closeAddUserMenu }) => {
             placeholder='example@gmail.com'
           />
 
-          <button className='add-user-button' onClick={addUserToEnd}>
+          <button className='add-user-button' onClick={addUserToBegining}>
             Add User
           </button>
           <button onClick={closeAddUserMenu} className='close-add-user-modal'>
