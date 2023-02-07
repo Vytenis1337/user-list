@@ -23,7 +23,7 @@ export const EditModal = () => {
   const handleEditFormSubmit = (event) => {
     event.preventDefault();
 
-    const editedContact = {
+    const editedUsers = {
       id: editID,
       email: editData.email,
       first_name: editData.first_name,
@@ -31,14 +31,14 @@ export const EditModal = () => {
       avatar: editData.avatar,
     };
 
-    const newContacts = [...users];
+    const newUsers = [...users];
 
     const index = users.findIndex((user) => user.id === editID);
 
-    newContacts[index] = editedContact;
+    newUsers[index] = editedUsers;
 
     axios
-      .patch(`https://reqres.in/api/users/${editID}`, newContacts)
+      .patch(`https://reqres.in/api/users/${editID}`, newUsers)
       .then((res) => {
         console.log(res);
       })
@@ -46,7 +46,7 @@ export const EditModal = () => {
         console.log(err);
       });
 
-    setUsers(newContacts);
+    setUsers(newUsers);
 
     setEditID(null);
   };
