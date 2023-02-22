@@ -2,6 +2,8 @@ import './EditModalForm.css';
 import { useUsers } from '../../context/UsersProvider';
 import { motionBg } from '../../utilities/framerMotion';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useRef } from 'react';
+import { useOutsideClick } from '../../hooks/useOutsideClick';
 
 export const EditModalForm = ({
   handleCancelClick,
@@ -9,6 +11,9 @@ export const EditModalForm = ({
   handleEditFormSubmit,
 }) => {
   const { editID, users, editData } = useUsers();
+
+  const modalRef = useRef(null);
+  useOutsideClick(handleCancelClick, modalRef);
   return (
     <AnimatePresence>
       {editID && (
@@ -18,7 +23,7 @@ export const EditModalForm = ({
           animate='visible'
           className='edit-user-motion-bg'
         >
-          <div className='edit-user-modal'>
+          <div className='edit-user-modal' ref={modalRef}>
             {users
               .filter((item) => item.id === editID)
               .map((filteredPerson) => (

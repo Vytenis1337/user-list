@@ -2,9 +2,13 @@ import './AddUserForm.css';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useUsers } from '../../context/UsersProvider';
 import { motionBg } from '../../utilities/framerMotion';
+import { useOutsideClick } from '../../hooks/useOutsideClick';
+import { useRef } from 'react';
 
 export const AddUserForm = ({ addUserToBegining, closeAddUserMenu }) => {
   const { setFormData, formData } = useUsers();
+  const modalRef = useRef(null);
+  useOutsideClick(closeAddUserMenu, modalRef);
   return (
     <AnimatePresence>
       <motion.div
@@ -13,7 +17,7 @@ export const AddUserForm = ({ addUserToBegining, closeAddUserMenu }) => {
         animate='visible'
         className='add-user-motion-bg'
       >
-        <div className='add-user-modal'>
+        <div className='add-user-modal' ref={modalRef}>
           <h2>Add User Form</h2>
           <label className='label-field'>avatar</label>
           <input

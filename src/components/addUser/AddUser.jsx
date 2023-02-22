@@ -1,6 +1,7 @@
 import './AddUser.css';
-import axios from 'axios';
 
+import axios from 'axios';
+import { useEscapeKey } from '../../hooks/useEscKey';
 import { useUsers } from '../../context/UsersProvider';
 import { AddUserForm } from '../addUserForm/AddUserForm';
 
@@ -31,6 +32,8 @@ export const AddUser = () => {
       avatar: '',
     });
   };
+
+  useEscapeKey(closeAddUserMenu);
 
   return (
     <div>

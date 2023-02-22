@@ -1,7 +1,7 @@
 import './EditModal.css';
 import axios from 'axios';
 import { useUsers } from '../../context/UsersProvider';
-
+import { useEscapeKey } from '../../hooks/useEscKey';
 import { EditModalForm } from '../editModalForm/EditModalForm';
 
 export const EditModal = () => {
@@ -55,6 +55,7 @@ export const EditModal = () => {
     setEditID(null);
   };
 
+  useEscapeKey(handleCancelClick);
   return (
     <EditModalForm
       handleEditFormChange={handleEditFormChange}
